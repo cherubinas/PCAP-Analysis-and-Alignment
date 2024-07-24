@@ -1,0 +1,42 @@
+---
+- hosts: attacker
+  become: yes
+  tasks:
+    - name: Update package lists
+      apt:
+        update_cache: yes
+
+    - name: Install nmap
+      apt:
+        name: nmap
+        state: present
+
+    - name: Install tcpdump
+      apt:
+        name: tcpdump
+        state: present
+        update_cache: yes
+
+    - name: Run tcpdump in background
+      shell: tcpdump -i eth0 -w /home/captureA.pcap > /dev/null 2>&1 &
+      async: 120
+      poll: 0
+      become: yes
+      register: tcpdump_result
+
+    - name: Wait for tcpdump to start
+      async_status:
+        jid: "{{ tcpdump_result.ansible_job_id }}"
+      register: job_result
+      retries: 6
+      delay: 10
+      until: job_result.finished
+
+    - name: Run nmap
+      command: nmap -p 1-65535 -T4 -A -Pn -v {{ target_ip }}
+      register: nmap_output
+      become: yes
+      ignore_errors: true
+
+    - debug:
+        var: nmap_output.stdout_lines
