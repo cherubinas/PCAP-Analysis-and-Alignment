@@ -4,7 +4,7 @@ This project aims to develop a system for capturing and analyzing network traffi
 
 ## Team members
 
-- Abraitis Martynas
+- [Abraitis Martynas](https://github.com/mmartiss)
 - Jakolovaitė Diana 
 - Kabišaitytė Evelina
 - Luis Eivydas
