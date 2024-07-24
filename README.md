@@ -6,7 +6,7 @@ This project aims to develop a system for capturing and analyzing network traffi
 
 - [Abraitis Martynas](https://github.com/mmartiss)
 - Jakolovaitė Diana 
-- Kabišaitytė Evelina
+- [Kabišaitytė Evelina](https://github.com/cherubinas)
 - Luis Eivydas
 
 ## Description
