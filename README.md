@@ -5,9 +5,7 @@ This project aims to develop a system for capturing and analyzing network traffi
 ## Team members
 
 - [Abraitis Martynas](https://github.com/mmartiss)
-- Jakolovaitė Diana 
 - [Kabišaitytė Evelina](https://github.com/cherubinas)
-- Luis Eivydas
 
 ## Description
 This project simulates a cyber attack on 2 virtual machines, where machine 1 is the threat actor and machine 2 is the target machine. Nmap scan is used as the specific exploit for attacking.
