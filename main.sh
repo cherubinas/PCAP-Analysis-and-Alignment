@@ -117,7 +117,7 @@ fi
 ansible-playbook $VM_VICTIM.yml --user root
 ansible-playbook $VM_ATTACKER.yml --user root -e "target_ip=$CSSH_PRIP_VICTIM"
 
-LOCAL_DIR="/home/eilu8315"
+LOCAL_DIR="/home/evka8901"
 retrieve_pcap_file "$VM_ATTACKER" "$CSSH_PRIP_ATTACKER" "" "/home/captureA.pcap" "$LOCAL_DIR" "captureA.pcap"
 retrieve_pcap_file "$VM_VICTIM" "$CSSH_PRIP_VICTIM" "" "/home/captureB.pcap" "$LOCAL_DIR" "captureB.pcap"
 
